@@ -28,7 +28,7 @@ namespace Kvyk.Telegraph.Markdown
 
             return list;
         }
-        
+
         private List<Node> ParseBlock(Block item)
         {
             var list = new List<Node>();
@@ -47,7 +47,7 @@ namespace Kvyk.Telegraph.Markdown
                     break;
 
                 case ListBlock block:
-                    
+
                     break;
 
                 case ListItemBlock block:
@@ -66,8 +66,6 @@ namespace Kvyk.Telegraph.Markdown
                     list.Add(Node.Hr());
                     break;
 
-                case EmptyBlock:
-                case BlankLineBlock:
                 default:
                     list.Add(Node.P());
                     break;
@@ -79,19 +77,6 @@ namespace Kvyk.Telegraph.Markdown
         private List<Node> ParseContainer(ContainerInline block)
         {
             var list = new List<Node>();
-
-            foreach (var item in block)
-            {
-                switch (item)
-                {
-                    case Markdig.Syntax.Inlines.AutolinkInline:
-
-                        break;
-                    default:
-                        break;
-                }
-            }
-
             return list;
         }
 

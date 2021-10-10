@@ -79,7 +79,7 @@ namespace Kvyk.Telegraph.Models
         public static Node H3(params Node[] nodes) => H3(nodes.ToList());
 
         #endregion
-        
+
         #region H4
 
         /// <summary>
@@ -130,7 +130,7 @@ namespace Kvyk.Telegraph.Models
             node.Artibutes.Href = href;
             return node;
         }
-        
+
         /// <summary>
         /// Create new Node with tag A, href and text
         /// </summary>
@@ -191,7 +191,7 @@ namespace Kvyk.Telegraph.Models
         public static Node B(params Node[] nodes) => B(nodes.ToList());
 
         #endregion
-        
+
         #region I
 
         /// <summary>
@@ -259,7 +259,7 @@ namespace Kvyk.Telegraph.Models
         public static Node Em(params Node[] nodes) => Em(nodes.ToList());
 
         #endregion
-        
+
         #region U
 
         /// <summary>
@@ -327,7 +327,7 @@ namespace Kvyk.Telegraph.Models
         public static Node S(params Node[] nodes) => S(nodes.ToList());
 
         #endregion
-        
+
         #region Br
 
         /// <summary>
@@ -438,7 +438,7 @@ namespace Kvyk.Telegraph.Models
         public static Node Strong(params Node[] nodes) => Strong(nodes.ToList());
 
         #endregion
-        
+
         #region Aside
 
         /// <summary>
@@ -472,7 +472,7 @@ namespace Kvyk.Telegraph.Models
         public static Node Aside(params Node[] nodes) => Aside(nodes.ToList());
 
         #endregion
-        
+
         #region Blockquote
 
         /// <summary>
@@ -506,7 +506,7 @@ namespace Kvyk.Telegraph.Models
         public static Node Blockquote(params Node[] nodes) => Blockquote(nodes.ToList());
 
         #endregion
-        
+
         #region Hr
 
         /// <summary>
@@ -583,7 +583,7 @@ namespace Kvyk.Telegraph.Models
         }
 
         #endregion
-        
+
         #region Ul
 
         /// <summary>
@@ -636,7 +636,7 @@ namespace Kvyk.Telegraph.Models
         }
 
         #endregion
-        
+
         #region Video
 
         /// <summary>
@@ -676,7 +676,7 @@ namespace Kvyk.Telegraph.Models
                 { "vimeo\\.com",        "vimeo" },
             };
 
-            var linkValidator = new Regex(@$"(http(s)?://)?(?<resource>({string.Join(")|(", resources.Keys)}))(/.*)?");
+            var linkValidator = new Regex($"(http(s)?://)?(?<resource>({string.Join(")|(", resources.Keys)}))(/.*)?");
 
             if (!linkValidator.IsMatch(src))
                 throw new TelegraphException($"Invalid link. Allowed resources: {string.Join(", ", resources.Values.Distinct())}");
@@ -748,7 +748,7 @@ namespace Kvyk.Telegraph.Models
         /// Create new Node with tag Figure with img and caption
         /// </summary>
         public static Node ImageFigure(string imgSrc, IEnumerable<Node> captionNodes) => Figure(Img(imgSrc), Figcaption(captionNodes));
-        
+
         /// <summary>
         /// Create new Node with tag Figure with img and caption
         /// </summary>
@@ -763,7 +763,7 @@ namespace Kvyk.Telegraph.Models
         /// Create new Node with tag Figure with video and caption
         /// </summary>
         public static Node VideoFigure(string videoSrc, params Node[] caption) => VideoFigure(videoSrc, caption.ToList());
-        
+
         /// <summary>
         /// Create new Node with tag Figure with Iframe and caption
         /// </summary>

@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
     <RootNamespace>Kvyk.Telegraph.Parsers</RootNamespace>
 
     <Authors>Marko Kvyk</Authors>
@@ -29,7 +29,6 @@
 
   <ItemGroup>
     <PackageReference Include="HtmlAgilityPack" Version="1.11.34" />
-    <PackageReference Include="Kvyk.Telegraph" Version="1.1.0" />
     <PackageReference Include="Markdig" Version="0.25.0" />
   </ItemGroup>
 
@@ -42,6 +41,10 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Telegraph\Telegraph.csproj" />
   </ItemGroup>
   
 </Project>

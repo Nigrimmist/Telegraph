@@ -24,15 +24,15 @@ namespace Kvyk.Telegraph.Models
         /// Name of the DOM element. Available tags: a, aside, b, blockquote, br, code, em, figcaption, figure, h3, h4, hr, i, iframe, img, li, ol, p, pre, s, strong, u, ul, video.
         /// </summary>
         [JsonProperty("tag", NullValueHandling = NullValueHandling.Ignore)]
-        public string TagValue 
-        { 
+        public string TagValue
+        {
             get => Tag.ToString().ToLower();
             set
             {
                 var name = Enum.GetNames(typeof(TagEnum))
                     .FirstOrDefault(v => v.ToLower() == value.ToLower());
 
-                if(name != null)
+                if (name != null)
                 {
                     Tag = (TagEnum)Enum.Parse(typeof(TagEnum), name);
                 }
@@ -42,7 +42,7 @@ namespace Kvyk.Telegraph.Models
                 }
             }
         }
-        
+
         /// <summary>
         /// Value of the TagValue.
         /// </summary>
@@ -81,8 +81,11 @@ namespace Kvyk.Telegraph.Models
 
         #region Conversion Operators
 
-        public static implicit operator string (Node node) => node.Value;
-        public static implicit operator Node (string value) => new(value);
+        public static implicit operator string(Node node) => node.Value;
+        public static implicit operator Node(string value)
+        {
+            return new Node(value);
+        }
 
         #endregion
     }

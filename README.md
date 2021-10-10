@@ -1,7 +1,7 @@
 # Kvyk.Telegraph
-Simple to use api-client for [Telegra.ph](https://telegra.ph).
+Simple to use api-client for [Telegra.ph](https://telegra.ph). (**Adapted for .net Core 2.1**)
 
-C# .NET 5.0
+C# .NET Core 2.1
 
 ## Installation
 Install last varsion
